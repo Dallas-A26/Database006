@@ -1,0 +1,72 @@
+<!--Did the front end with AI-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paintings Editor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header><h1>Paintings Editor</h1></header>
+  <main>
+    <section id="list"></section>
+
+    <section id="editor">
+      <p id="placeholder">Select a painting from the list to edit it.</p>
+
+      <form id="paintingForm" action="/api/paintings/" method="post" hidden>
+        <h2 id="formTitle"></h2>
+
+        <fieldset>
+          <legend>Artist</legend>
+          <label>First name <input name="FirstName"></label>
+          <label>Last name <input name="LastName"></label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Painting Details</legend>
+          <label>Title <input name="Title"></label>
+          <label>Year <input name="YearOfWork" type="number"></label>
+          <label>Medium <input name="Medium"></label>
+          <label>Description <textarea name="Description" rows="5"></textarea></label>
+          <label>Excerpt <textarea name="Excerpt" rows="3"></textarea></label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Dimensions</legend>
+          <label>Width <input name="Width" type="number"></label>
+          <label>Height <input name="Height" type="number"></label>
+          <label>Shape <input name="ShapeName"></label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Gallery</legend>
+          <label>Gallery name <input name="GalleryName"></label>
+          <label>City <input name="GalleryCity"></label>
+          <label>Country <input name="GalleryCountry"></label>
+          <label>Latitude <input name="Latitude" type="number" step="any"></label>
+          <label>Longitude <input name="Longitude" type="number" step="any"></label>
+          <label>Museum link <input name="MuseumLink"></label>
+          <label>Accession number <input name="AccessionNumber"></label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Sales &amp; Links</legend>
+          <label>Cost <input name="Cost" type="number" step="any"></label>
+          <label>MSRP <input name="MSRP" type="number" step="any"></label>
+          <label>Copyright <input name="CopyrightText"></label>
+          <label>Wikipedia link <input name="WikiLink"></label>
+        </fieldset>
+
+        <div class="buttons">
+          <button type="submit">Save</button>
+          <button type="button" id="resetBtn">Reset</button>
+        </div>
+        <p id="message"></p>
+      </form>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
